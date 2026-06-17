@@ -11,7 +11,7 @@ const timerButton = $("#timerButton");
 const timerState = $("#timerState");
 const timerNote = $("#timerNote");
 
-const API_BASE = "https://stillroom-of73.onrender.com";
+const API_BASE = "https://stillroom-de5c.onrender.com";
 
 let selectedMinutes = 50;
 let timeRemaining = selectedMinutes * 60;
