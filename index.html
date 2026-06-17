@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stillroom is a calm shared study space for you and your friends."
+    />
+    <title>Stillroom — Study together, quietly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sky" aria-hidden="true">
+      <div class="stars stars-one"></div>
+      <div class="stars stars-two"></div>
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
+    </div>
+
+    <main>
+      <section class="landing view active" id="landingView">
+        <nav class="landing-nav">
+          <a class="brand" href="#" aria-label="Stillroom home">
+            <span class="brand-mark">✦</span>
+            <span>stillroom</span>
+          </a>
+          <button class="text-button" id="openJoinButton">Join a room</button>
+        </nav>
+
+        <div class="hero">
+          <div class="eyebrow"><span></span> A quiet corner for shared focus</div>
+          <h1>Alone in your work.<br /><em>Together</em> in the moment.</h1>
+          <p>
+            Create a calm study room, invite your friends, and let a shared
+            timer keep everyone gently accountable.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-button" id="createRoomButton">
+              Create a study room
+              <span>→</span>
+            </button>
+            <button class="secondary-button" id="heroJoinButton">I have a room code</button>
+          </div>
+          <div class="trust-note">
+            <span class="avatar-stack">
+              <i>R</i><i>M</i><i>A</i>
+            </span>
+            <span>No cameras. No noise. Just presence.</span>
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <div class="preview-top">
+            <span><i class="live-dot"></i> 4 studying now</span>
+            <span>deep focus</span>
+          </div>
+          <strong>42:18</strong>
+          <div class="preview-progress"><span></span></div>
+          <p>Everyone is focusing</p>
+        </div>
+      </section>
+
+      <section class="room view" id="roomView">
+        <header class="room-header">
+          <a class="brand" href="#" id="brandHome">
+            <span class="brand-mark">✦</span>
+            <span>stillroom</span>
+          </a>
+          <div class="room-identity">
+            <span class="status-pill"><i></i> room is open</span>
+            <button class="icon-button" id="copyRoomButton" title="Copy room details">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 8h11v11H8zM5 16H4V5h11v1" />
+              </svg>
+            </button>
+            <button class="leave-button" id="leaveRoomButton">Leave room</button>
+          </div>
+        </header>
+
+        <div class="quick-credentials panel" aria-label="Room access details">
+          <div class="quick-credential">
+            <span>Room ID</span>
+            <strong id="quickRoomId">NOVA-27</strong>
+          </div>
+          <button class="quick-copy-button" id="quickRoomCopyButton" type="button" title="Copy room ID">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 8h11v11H8zM5 16H4V5h11v1" />
+            </svg>
+          </button>
+          <div class="quick-credential">
+            <span>Password</span>
+            <strong id="quickRoomPassword">moonlight</strong>
+          </div>
+          <button class="quick-copy-button" id="quickPasswordCopyButton" type="button" title="Copy password">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 8h11v11H8zM5 16H4V5h11v1" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="room-layout">
+          <aside class="sidebar panel">
+            <div class="room-title">
+              <span class="section-label">Study room</span>
+              <h2>Late night library</h2>
+              <button class="room-code" id="roomCodeButton" title="Copy room code">
+                <span>ROOM ID</span>
+                <strong id="roomCodeText">NOVA-27</strong>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 8h11v11H8zM5 16H4V5h11v1" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="people-section">
+              <div class="section-heading">
+                <span class="section-label">In the room</span>
+                <span id="onlineCount">4 online</span>
+              </div>
+              <ul class="people-list" id="peopleList">
+                <li>
+                  <div class="person-avatar lavender">A</div>
+                  <div><strong>You</strong><span>Mathematics</span></div>
+                  <i class="presence online"></i>
+                </li>
+                <li>
+                  <div class="person-avatar blue">R</div>
+                  <div><strong>Riya</strong><span>Physics</span></div>
+                  <i class="presence online"></i>
+                </li>
+                <li>
+                  <div class="person-avatar rose">K</div>
+                  <div><strong>Kabir</strong><span>Economics</span></div>
+                  <i class="presence online"></i>
+                </li>
+                <li>
+                  <div class="person-avatar green">M</div>
+                  <div><strong>Maya</strong><span>Biology</span></div>
+                  <i class="presence online"></i>
+                </li>
+                <li class="offline-person">
+                  <div class="person-avatar muted">S</div>
+                  <div><strong>Sam</strong><span>Last seen 8m ago</span></div>
+                  <i class="presence"></i>
+                </li>
+              </ul>
+            </div>
+
+            <button class="invite-button" id="inviteButton">
+              <span>+</span> Invite a friend
+            </button>
+          </aside>
+
+          <section class="focus-area">
+            <div class="focus-header">
+              <div>
+                <span class="section-label">Current session</span>
+                <h2 id="sessionTitle">Deep focus</h2>
+              </div>
+              <button class="sound-button" id="soundButton" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 9v6h4l5 4V5L9 9H5zm12.5 0a4 4 0 0 1 0 6m2-9a8 8 0 0 1 0 12" />
+                </svg>
+                <span>Soundscape</span>
+              </button>
+            </div>
+
+            <div class="timer-wrap">
+              <div class="timer-orbit orbit-one"></div>
+              <div class="timer-orbit orbit-two"></div>
+              <div class="timer-card">
+                <span class="timer-state" id="timerState">Ready when you are</span>
+                <div class="timer" id="timer" aria-live="polite">50:00</div>
+                <div class="timer-actions">
+                  <button class="timer-main-button" id="timerButton">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5z" /></svg>
+                    <span>Start together</span>
+                  </button>
+                  <button class="timer-reset-button" id="resetButton" title="Reset timer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 12a8 8 0 1 0 2.34-5.66L4 9m0-5v5h5" />
+                    </svg>
+                  </button>
+                </div>
+                <p id="timerNote">Starting will begin the timer for everyone.</p>
+              </div>
+            </div>
+
+            <div class="session-settings panel">
+              <button class="duration active" data-minutes="50"><strong>50</strong><span>focus</span></button>
+              <button class="duration" data-minutes="25"><strong>25</strong><span>sprint</span></button>
+              <button class="duration" data-minutes="10"><strong>10</strong><span>break</span></button>
+              <button class="duration custom" id="customDuration"><strong>+</strong><span>custom</span></button>
+            </div>
+          </section>
+
+          <aside class="right-rail">
+            <section class="chat-card panel">
+              <div class="section-heading">
+                <span class="section-label">Room chat</span>
+                <span class="chat-live"><i></i> live</span>
+              </div>
+              <div class="chat-messages" id="chatMessages" aria-live="polite">
+                <div class="chat-empty">Quiet for now. Say hello.</div>
+              </div>
+              <form class="chat-form" id="chatForm">
+                <input id="chatInput" maxlength="240" autocomplete="off" placeholder="Write a quiet note..." aria-label="Chat message" />
+                <button class="ripple-button" type="submit" aria-label="Send message">↑</button>
+              </form>
+            </section>
+
+            <section class="goal-card panel">
+              <div class="section-heading">
+                <span class="section-label">My intention</span>
+                <span class="goal-check" id="goalCheck">✓</span>
+              </div>
+              <textarea id="goalInput" maxlength="100" aria-label="Your study intention">Finish chapter 4 exercises</textarea>
+              <p>Visible only to you</p>
+            </section>
+
+            <section class="rhythm-card panel">
+              <span class="section-label">Tonight's rhythm</span>
+              <div class="rhythm-row active">
+                <i></i>
+                <div><strong>Deep focus</strong><span>50 minutes</span></div>
+                <b>now</b>
+              </div>
+              <div class="rhythm-line"></div>
+              <div class="rhythm-row">
+                <i></i>
+                <div><strong>Quiet break</strong><span>10 minutes</span></div>
+              </div>
+              <div class="rhythm-line"></div>
+              <div class="rhythm-row">
+                <i></i>
+                <div><strong>Deep focus</strong><span>50 minutes</span></div>
+              </div>
+            </section>
+
+            <blockquote>
+              “Great things are done by a series of small things brought together.”
+              <cite>Vincent van Gogh</cite>
+            </blockquote>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="joinModal" aria-hidden="true">
+      <form class="modal panel" id="joinForm">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <span class="brand-mark">✦</span>
+        <span class="section-label">Enter a shared space</span>
+        <h2>Join your friends</h2>
+        <p>Use the room ID and password your friend shared with you.</p>
+        <label>
+          Your name
+          <input required id="nameInput" autocomplete="name" placeholder="e.g. Alex" />
+        </label>
+        <label>
+          Room ID
+          <input required id="roomInput" placeholder="e.g. NOVA-27" />
+        </label>
+        <label>
+          Password
+          <input required type="password" id="passwordInput" placeholder="••••••••" />
+        </label>
+        <button class="primary-button" type="submit">Join study room <span>→</span></button>
+      </form>
+    </div>
+
+    <div class="modal-backdrop" id="inviteModal" aria-hidden="true">
+      <div class="modal invite-modal panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <span class="brand-mark">✦</span>
+        <span class="section-label">Bring your people</span>
+        <h2>Invite a friend</h2>
+        <p>Share these private details with people you trust.</p>
+        <div class="credential-box">
+          <span>Room ID</span><strong id="inviteRoomId">NOVA-27</strong>
+          <span>Password</span><strong>moonlight</strong>
+        </div>
+        <button class="primary-button" id="copyInviteButton">Copy invitation <span>⧉</span></button>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="soundModal" aria-hidden="true">
+      <div class="modal sound-modal panel">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+        <span class="brand-mark">✦</span>
+        <span class="section-label">Personal soundscape</span>
+        <h2>Find your focus</h2>
+        <p>Your audio stays private to your device, so everyone can choose their own atmosphere.</p>
+        <button class="sound-option ripple-button" id="rainButton">
+          <span class="sound-art rain-art"><i></i><i></i><i></i></span>
+          <span><strong>Soft rain</strong><small>Always available</small></span>
+          <b id="rainStatus">Play</b>
+        </button>
+        <label class="sound-option upload-option ripple-button" for="musicUpload">
+          <span class="sound-art music-art">♫</span>
+          <span><strong>Add your music</strong><small id="musicName">MP3, WAV, or audio file</small></span>
+          <b>Choose</b>
+        </label>
+        <input id="musicUpload" type="file" accept="audio/*" hidden />
+        <div class="volume-row">
+          <span>Volume</span>
+          <input id="volumeSlider" type="range" min="0" max="100" value="35" />
+          <button id="stopAudioButton" class="tiny-button">Stop</button>
+        </div>
+        <audio id="musicPlayer" loop></audio>
+      </div>
+    </div>
+
+    <div class="activity-stack" id="activityStack" aria-live="polite"></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+    <script src="enhancements.js"></script>
+  </body>
+</html>
